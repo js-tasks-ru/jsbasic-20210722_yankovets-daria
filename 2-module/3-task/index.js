@@ -1,10 +1,7 @@
 let calculator = {
-  a: undefined,
-  b: undefined,
-
-  read(n, m) {
-    this.a = n;
-    this.b = m;
+  read(a, b) {
+    this.a = a;
+    this.b = b;
   },
 
   sum() {
