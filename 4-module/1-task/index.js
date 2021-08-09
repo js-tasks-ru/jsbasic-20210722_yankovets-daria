@@ -1,5 +1,4 @@
 function makeFriendsList(friends) {
-
   let ul = document.createElement('ul');
   document.body.prepend(ul);
   
@@ -8,10 +7,7 @@ function makeFriendsList(friends) {
     
     li.innerHTML = friends[i].firstName + ' ' + friends[i].lastName;
     ul.append(li);
-
   }
   
 return ul;
 }
-
-makeFriendsList(friends);
