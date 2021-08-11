@@ -1,5 +1,4 @@
-function highlight(table) {
-    
+function highlight(table) {    
     let cellStatus;
     let cellGender;
     let cellAge;
