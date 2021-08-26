@@ -69,10 +69,11 @@ export default class StepSlider {
         progress.style.width = `${step * numStep}%`;
       }
 
-      this.elem.dispatchEvent(new CustomEvent('slider-change', {
-        bubbles: true,
-        detail: activStep
-      }));
+      const sliderChange = new CustomEvent('slider-change', {
+        detail: +activStep,
+        bubbles: true
+      });
+      this.elem.dispatchEvent(sliderChange);
     });
   } 
 

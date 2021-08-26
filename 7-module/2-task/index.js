@@ -52,7 +52,7 @@ export default class Modal {
   closeModal() {
 
     function keydownEscape(event) {
-      if (event.code === 'Escape') {
+      if (event.code === 'Escape' && document.body.querySelector('.modal')) {
         document.body.querySelector('.modal').remove();
         document.body.classList.remove('is-modal-open');
         document.removeEventListener('keydown', keydownEscape);
