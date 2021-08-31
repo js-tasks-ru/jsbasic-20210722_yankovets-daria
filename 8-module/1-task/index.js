@@ -39,11 +39,11 @@ export default class CartIcon {
   }
 
   updatePosition() {
-    let topCoord = this.elem.offsetTop - window.pageYOffset;
-    
     if (this.elem.offsetHeight === 0) {
       return;
     }
+
+    let topCoord = this.elem.offsetTop - window.pageYOffset;
 
     if (document.documentElement.clientWidth <= 767) {
       Object.assign(this.elem.style, {

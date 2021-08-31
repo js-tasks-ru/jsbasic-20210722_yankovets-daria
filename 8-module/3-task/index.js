@@ -44,7 +44,7 @@ export default class Cart {
   }
 
   isEmpty() {
-    return this.cartItems.length === 0 ? true : false;
+    return this.cartItems.length === 0;
   }
 
   getTotalCount() {
