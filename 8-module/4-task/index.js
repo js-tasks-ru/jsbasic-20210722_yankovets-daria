@@ -172,7 +172,7 @@ export default class Cart {
     event.preventDefault();
     event.target.querySelector('button[type = submit]').classList.add('.is-loading');
 
-    let formData = new FormData(document.forms.order);
+    let formData = new FormData(document.forms[0]);
 
     fetch('https://httpbin.org/post', {
       method: 'POST',
