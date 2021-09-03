@@ -3,6 +3,7 @@ import createElement from '../../assets/lib/create-element.js';
 export default class RibbonMenu {
   constructor(categories) {
     this.categories = categories;
+    this.value = '';
     this.render();
     this.scrollRibbon();
     this.selectItemActive();
@@ -71,11 +72,12 @@ export default class RibbonMenu {
 
       let activItem = event.currentTarget.querySelector('.ribbon__item_active');
       activItem.classList.remove('ribbon__item_active');
-      let selectCategory= event.target;
-      selectCategory.classList.add('ribbon__item_active');
+      event.target.classList.add('ribbon__item_active');
+      this.value = event.target.dataset.id;
+      console.log(this.value);
 
       let ribbonSelect = new CustomEvent('ribbon-select', { 
-        detail: selectCategory.dataset.id, 
+        detail: this.value, 
         bubbles: true 
       }); 
       this.elem.dispatchEvent(ribbonSelect);

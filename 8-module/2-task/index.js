@@ -36,12 +36,15 @@ export default class ProductGrid {
         return;
       } else if (product.spiciness > this.filters.maxSpiciness && this.filters.hasOwnProperty('maxSpiciness')) {
         return;
-      } else if (this.filters.category !== product.category && this.filters.hasOwnProperty('category')) {
+      } else if (this.filters.category !== product.category && this.filters.category) {
         return;
       } 
 
+      
+
       let card = new ProductCard(product);
       this.elem.querySelector('.products-grid__inner').append(card.elem); 
+
     });
   }
 }

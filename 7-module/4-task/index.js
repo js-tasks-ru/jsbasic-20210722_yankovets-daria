@@ -6,7 +6,7 @@ export default class StepSlider {
     this.value = value;
     this.render();
     this.dragNDrop();
-    this.selectActivStep();
+    this.selectActiveStep();
   }
 
   render() {
@@ -34,7 +34,7 @@ export default class StepSlider {
     this.elem.querySelector('.slider__steps').querySelector('span').classList.add('slider__step-active');
   }
 
-  selectActivStep() {
+  selectActiveStep() {
     let thumb = this.elem.querySelector('.slider__thumb');
     let progress = this.elem.querySelector('.slider__progress');
     let slider = this.elem.querySelector('.slider__steps');
@@ -49,9 +49,10 @@ export default class StepSlider {
         slider.querySelector('.slider__step-active').classList.remove('slider__step-active');
         event.target.classList.add('slider__step-active');
         activStep = event.target.dataset.index;
+        let activStepPercent = `${step * event.target.dataset.index}%`;
 
-        thumb.style.left = `${step * event.target.dataset.index}%`;
-        progress.style.width = `${step * event.target.dataset.index}%`;
+        thumb.style.left = activStepPercent;
+        progress.style.width = activStepPercent;
 
       } else  {
         let clientRect = this.elem.getBoundingClientRect();
